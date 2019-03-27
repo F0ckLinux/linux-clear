@@ -18,7 +18,7 @@ function _bak {
 }
 
 function _resume {
-  eval $(cat $index_f | awk '{ print "cp -v ", $3, $1 }' )
+  eval $(cat $index_f | awk  -F "'" '{ print "cp -v ", $4, $2 }' )
 }
 
 echo "collection info for clear"
