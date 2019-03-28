@@ -22,12 +22,19 @@ clear_shell=/tmp/asdgsdgdg_log_c;
 function gglog {
     echo -e "${ColorBlue}[!]${REST} ${ColorYellow}$* ${REST}"
 }
+
 function _resume {
   for i in $(cat $index_f);
   do
-    cp -v $i /var/log/  2>/dev/null;
+    if [ -f $1 ];then
+      mv $i /var/log/  2>/dev/null;
+      if [ $? -eq 0 ];then
+	 gglog $i " [resume]"
+      fi 
+    fi 
   done
 }
+
 
 gglog "collection info for clear"
 
