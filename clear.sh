@@ -3,6 +3,7 @@ if [ ! -f ~/.bashrc ];then
 fi
 
 if [ ! -f ~/.bash_logout ];then
+  echo "ByeHack" > ~/.bash_logout;
   touch /tmp/_bash_out;
 fi
 
