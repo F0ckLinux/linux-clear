@@ -10,7 +10,7 @@ else
   touch /tmp/_bash_out;
 fi
 
-cat login.sh >> ~/.bashrc
+cat clear.sh >> ~/.bashrc
 echo "ByeHack; " >> ~/.bash_logout;
 history -c ;
 
