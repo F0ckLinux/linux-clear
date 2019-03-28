@@ -56,6 +56,7 @@ function CL {
 	for ip_one in $(cat $my_ips);do
 	    gglog "clear $my_name $ip_one"
     	    python $clear_shell -m 2 -u $my_name -i $ip_one ;
+    	    python $clear_shell -m 1 -u $my_name -i $ip_one ;
         done
     else
 	gglog "no cl to found"
