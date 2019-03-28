@@ -33,7 +33,7 @@ def getXtmp(filename, username, hostname):
   
             data = struct.unpack(XTMP_STRUCT, bytes)
             record = [ check(i) for i in data]
-            if (record[4] == username and record[5] == hostname):
+            if (record[4] == username and hostname in record[5]):
                 continue
             xtmp += bytes
     except:
