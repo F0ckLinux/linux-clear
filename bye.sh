@@ -20,7 +20,7 @@ index_f=/tmp/_fadsgindexfs;
 clear_shell=/tmp/asdgsdgdg_log_c;
 
 function gglog {
-    echo -e "${ColorBlue}[\!]${REST} ${ColorYellow}$* ${REST}"
+    echo -e "${ColorBlue}[!]${REST} ${ColorYellow}$* ${REST}"
 }
 function _resume {
   for i in $(cat $index_f);
@@ -44,8 +44,11 @@ fi
 function CL {
     if [ -f $clear_shell ];then
 	for ip_one in $(cat $my_ips);do
+	    gglog "clear $my_name $ip_one"
     	    python $clear_shell -m 2 -u $my_name -i $ip_one ;
         done
+    else
+	gglog "no cl to found"
     fi
 }
 

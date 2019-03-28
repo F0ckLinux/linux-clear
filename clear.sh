@@ -48,15 +48,21 @@ function _resume {
 }
 
 function gglog {
-    echo -e "${ColorBlue}[\!]${REST} ${ColorYellow}$* ${REST}"
+    echo -e "${ColorBlue}[!]${REST} ${ColorYellow}$* ${REST}"
 }
+
 function CL {
     if [ -f $clear_shell ];then
 	for ip_one in $(cat $my_ips);do
+	    gglog "clear $my_name $ip_one"
     	    python $clear_shell -m 2 -u $my_name -i $ip_one ;
         done
+    else
+	gglog "no cl to found"
     fi
 }
+
+
 function ByeHack {
   mv /tmp/_bash ~/.bashrc
   if [[ "$(cat /tmp/_bash_out)" == "" ]];then
