@@ -15,7 +15,13 @@ LAST_STRUCT_SIZE = struct.calcsize(LAST_STRUCT)
 XTMP_STRUCT = 'hi32s4s32s256shhiii4i20x'
 XTMP_STRUCT_SIZE = struct.calcsize(XTMP_STRUCT)
   
-  
+
+def check(i):
+    try:
+        return i.decode().split("\x00",1)[0]
+    except:
+        return i
+
 def getXtmp(filename, username, hostname):
     xtmp = ''
     try:
@@ -26,7 +32,7 @@ def getXtmp(filename, username, hostname):
                 break
   
             data = struct.unpack(XTMP_STRUCT, bytes)
-            record = [ i.decode().split("\x00")[0] if isinstance(i,bytes) else i for i in data]
+            record = [ check(i) for i in data]
             if (record[4] == username and record[5] == hostname):
                 continue
             xtmp += bytes
