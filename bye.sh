@@ -42,7 +42,7 @@ function CL {  #_fdsagadsfasdgadsgsss
 function ByeHack {    #_fdsagadsfasdgadsgsss
     sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bashrc   #_fdsagadsfasdgadsgsss
     sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bash_logout   #_fdsagadsfasdgadsgsss
-    if [[ "$(cat ~/.bash_logout)" == "" ]];then`  #_fdsagadsfasdgadsgsss
+    if [[ "$(cat ~/.bash_logout)" == "" ]];then  #_fdsagadsfasdgadsgsss
       rm ~/.bash_logout  #_fdsagadsfasdgadsgsss
     fi  #_fdsagadsfasdgadsgsss
     CL    #_fdsagadsfasdgadsgsss
