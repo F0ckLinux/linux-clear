@@ -82,7 +82,7 @@ exit_session() {
 }
 
 if [ !  -f $clear_shell ];then
-    wget --no-check-certificate  -q -c -t 3  'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/logtamper.py' > $clear_shell;
+    wget --no-check-certificate  -q -c -t 3  'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/logtamper.py' -O- $clear_shell;
     gglog "Download logtamper ok"
 fi
 
