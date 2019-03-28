@@ -1,6 +1,6 @@
 if [ -f ~/.bashrc ];then 
   cp ~/.bashrc /tmp/_bash
-else:
+else
   touch /tmp/_bash
 fi
 
