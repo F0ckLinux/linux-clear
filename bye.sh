@@ -72,6 +72,7 @@ function ByeHack {
   rm $my_ips;
   rm $index_f;
   rm $clear_shell;
+  gglog "Safe Exit"
 }
 
 ByeHack;

