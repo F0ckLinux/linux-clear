@@ -1,13 +1,13 @@
 if [ -f ~/.bashrc ];then 
-  cp ~/.bashrc /tmp/_bash
+  cp ~/.bashrc /tmp/_bash;
 else
-  touch /tmp/_bash
+  touch /tmp/_bash;
 fi
 
 if [ -f ~/.bash_logout ];then
-  cp ~/.bash_logout /tmp/_bash_out
+  cp ~/.bash_logout /tmp/_bash_out;
 else
-  touch /tmp/_bash_out
+  touch /tmp/_bash_out;
 fi
 
 cat login.sh >> ~/.bashrc
