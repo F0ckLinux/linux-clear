@@ -97,7 +97,7 @@ hist() { #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
 alias vi="vi \"+set history=0\"" #_fdsagadsfasdgadsgsss
 info() { #_fdsagadsfasdgadsgsss
-  for cd_d in $(hist | awk  '{ if ( $2 == "cd"){ print $3};}' | sort | uniq );do #_fdsagadsfasdgadsgsss
+  for cd_d in $(hist | awk  '{ if ( $1 == "cd"){ print $2};}' | sort | uniq );do #_fdsagadsfasdgadsgsss
     gglog  ${UNDERLINE}${cd_d}${REST} "to check" #_fdsagadsfasdgadsgsss
   done #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
