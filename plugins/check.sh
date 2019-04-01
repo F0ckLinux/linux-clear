@@ -5,8 +5,13 @@ deepcheck() {
     read FOUND_DELE
     echo -e "${REST} check"
     for f in $(grep -Ilr "$my_ip" /var/log/);do
-        gglog "Ip exists in $f , clear"
-        sed -ie "/$my_ip/d" $f;
+        gglog "$my_ip exists in $f."
+        if [[ $FOUND_DELE == "y" ]];then
+            sed -ie "/$my_ip/d" $f;
+            if [ -f ${f}e ];then
+            rm ${f}e;
+            fi
+        fi
     done
 }
 gglog 'load' 'ss-check to check if open ss'

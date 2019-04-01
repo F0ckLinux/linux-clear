@@ -17,7 +17,7 @@ function gglog {  #_fdsagadsfasdgadsgsss
 }  #_fdsagadsfasdgadsgsss
 function _resume {  #_fdsagadsfasdgadsgsss
   if [ -f $index_f ];then #_fdsagadsfasdgadsgsss
-    gglog ">> resume"  #_fdsagadsfasdgadsgsss
+    gglog ">> resume $(cat $index_f)"  #_fdsagadsfasdgadsgsss
     for i in $(cat $index_f);  #_fdsagadsfasdgadsgsss
     do  #_fdsagadsfasdgadsgsss
        gglog /tmp/$(basename $i) "test" #_fdsagadsfasdgadsgsss
