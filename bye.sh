@@ -17,12 +17,11 @@ function gglog {  #_fdsagadsfasdgadsgsss
 }  #_fdsagadsfasdgadsgsss
 function _resume {  #_fdsagadsfasdgadsgsss
   if [ -f $index_f ];then #_fdsagadsfasdgadsgsss
-    gglog $i " [resume]"  #_fdsagadsfasdgadsgsss
+    gglog ">> resume"  #_fdsagadsfasdgadsgsss
     for i in $(cat $index_f);  #_fdsagadsfasdgadsgsss
     do  #_fdsagadsfasdgadsgsss
       if [ -f $1 ];then  #_fdsagadsfasdgadsgsss
-        gglog $i "[resume]"
-        mv $i /var/log/  2>/dev/null;  #_fdsagadsfasdgadsgsss
+        mv $(basename $i) /var/log/  2>/dev/null;  #_fdsagadsfasdgadsgsss
         if [ $? -eq 0 ];then  #_fdsagadsfasdgadsgsss
 	        gglog $i " [ok]"  #_fdsagadsfasdgadsgsss
         fi   #_fdsagadsfasdgadsgsss
