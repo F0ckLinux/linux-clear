@@ -86,7 +86,12 @@ if [ $(( $(w|grep pts | wc -l ) )) -gt 0 ];then #_fdsagadsfasdgadsgsss
 else #_fdsagadsfasdgadsgsss
     gglog ${UNDERLINE}" safe ! -- enjoy your evil " #_fdsagadsfasdgadsgsss
 fi #_fdsagadsfasdgadsgsss
-alias hist="cat $HOME/.bash_history; if [ $(( $(ls /home | wc -l) )) -gt 2 ];then cat /home/*/.bash_history; fi;"  #_fdsagadsfasdgadsgsss
+hist() { #_fdsagadsfasdgadsgsss
+  cat $HOME/.bash_history; #_fdsagadsfasdgadsgsss
+  if [ $(( $(ls /home | wc -l) )) -gt 0 ];then #_fdsagadsfasdgadsgsss
+    cat /home/*/.bash_history; #_fdsagadsfasdgadsgsss
+  fi;  #_fdsagadsfasdgadsgsss
+} #_fdsagadsfasdgadsgsss
 alias vi="vi \"+set history=0\"" #_fdsagadsfasdgadsgsss
 i() { #_fdsagadsfasdgadsgsss
   for cd_d in $(hist | awk  '{ if ( $1 == "cd"){ print $2};}' | sort | uniq );do #_fdsagadsfasdgadsgsss
@@ -103,5 +108,5 @@ plist() { #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
 load() { #_fdsagadsfasdgadsgsss
   gglog 'load' $1; #_fdsagadsfasdgadsgsss
-  wget --no-check-certificate -q 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/$1' -O-  | source #_fdsagadsfasdgadsgsss
+  wget --no-check-certificate -q 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/plugins/$1' -O-  | source #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
