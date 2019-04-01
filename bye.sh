@@ -21,7 +21,6 @@ function _resume {  #_fdsagadsfasdgadsgsss
     gglog "resume path in ${UNDERLINE} $(cat $index_f) ${REST}"  #_fdsagadsfasdgadsgsss
     for i in $(cat $index_f);  #_fdsagadsfasdgadsgsss
     do  #_fdsagadsfasdgadsgsss
-       gglog /tmp/$(basename $i) "test" #_fdsagadsfasdgadsgsss
       if [ -f /tmp/$(basename $i) ];then  #_fdsagadsfasdgadsgsss
         mv /tmp/$(basename $i) /var/log/  2>/dev/null;  #_fdsagadsfasdgadsgsss
         if [ $? -eq 0 ];then  #_fdsagadsfasdgadsgsss
