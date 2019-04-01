@@ -3,7 +3,7 @@ gglog 'load' "deepcheck";
 deepcheck() {
     echo -ne "found and delete or only found [y/other]:${UNDERLINE}"
     read FOUND_DELE
-    echo -e "${REST} check"
+    echo -e "${REST}clear [${FOUND_DELE}]"
     for f in $(grep -Ilr "$my_ip" /var/log/);do
         gglog "$my_ip exists in $f."
         if [[ $FOUND_DELE == "y" ]];then

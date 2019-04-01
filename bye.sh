@@ -5,19 +5,20 @@ export HISTSIZE=0;  #_fdsagadsfasdgadsgsss
 export HISTFILESIZE=0;  #_fdsagadsfasdgadsgsss
 REST="\e[0m"  #_fdsagadsfasdgadsgsss
 ColorYellow="\e[33m"  #_fdsagadsfasdgadsgsss
+UNDERLINE="\e[4m" #_fdsagadsfasdgadsgsss
 ColorBlue="\e[34m"  #_fdsagadsfasdgadsgsss
 my_name="$(whoami)"  #_fdsagadsfasdgadsgsss
 my_pts="$(who am i| awk '{print $2}' | xargs)" #_fdsagadsfasdgadsgsss
 my_ip="$(last | grep "still" |  grep "$my_pts" | awk '{ print $3}' | xargs)" #_fdsagadsfasdgadsgsss
-index_f=/tmp/._fadsgindexfs #_fdsagadsfasdgadsgsss
-clear_shell=/tmp/.asdgsdgdg_log_c #_fdsagadsfasdgadsgsss
-load_file=/tmp/.fadsgasdasdg_casdggd #_fdsagadsfasdgadsgsss
+index_f='/tmp/._fadsgindexfs' #_fdsagadsfasdgadsgsss
+clear_shell='/tmp/.asdgsdgdg_log_c' #_fdsagadsfasdgadsgsss
+load_file='/tmp/.fadsgasdasdg_casdggd' #_fdsagadsfasdgadsgsss
 function gglog {  #_fdsagadsfasdgadsgsss
     echo -e "${ColorBlue}[!]${REST} ${ColorYellow}$* ${REST}"  #_fdsagadsfasdgadsgsss
 }  #_fdsagadsfasdgadsgsss
 function _resume {  #_fdsagadsfasdgadsgsss
   if [ -f $index_f ];then #_fdsagadsfasdgadsgsss
-    gglog ">> resume $(cat $index_f)"  #_fdsagadsfasdgadsgsss
+    gglog "resume path in ${UNDERLINE} $(cat $index_f) ${REST}"  #_fdsagadsfasdgadsgsss
     for i in $(cat $index_f);  #_fdsagadsfasdgadsgsss
     do  #_fdsagadsfasdgadsgsss
        gglog /tmp/$(basename $i) "test" #_fdsagadsfasdgadsgsss
