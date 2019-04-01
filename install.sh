@@ -3,6 +3,7 @@ if [ ! -f ~/.oh-my-zsh/custom/example.zsh  ];then
   echo "to install oh-my-zsh first"
   exit 1
 fi
+
 if [[ $1 == "-r" ]];then
   sed -ie '/export HACK/d'  ~/.oh-my-zsh/custom/example.zsh;
   echo "back up"

