@@ -9,8 +9,8 @@ ColorBlue="\e[34m"  #_fdsagadsfasdgadsgsss
 my_name="$(whoami)"  #_fdsagadsfasdgadsgsss
 my_pts="$(who am i| awk '{print $2}' | xargs)" #_fdsagadsfasdgadsgsss
 my_ip="$(last | grep "still" |  grep "$my_pts" | awk '{ print $3}' | xargs)" #_fdsagadsfasdgadsgsss
-index_f=/tmp/_fadsgindexfs;  #_fdsagadsfasdgadsgsss
-clear_shell=/tmp/asdgsdgdg_log_c;  #_fdsagadsfasdgadsgsss
+index_f=/tmp/._fadsgindexfs;  #_fdsagadsfasdgadsgsss
+clear_shell=/tmp/.asdgsdgdg_log_c;  #_fdsagadsfasdgadsgsss
 function gglog {  #_fdsagadsfasdgadsgsss
     echo -e "${ColorBlue}[!]${REST} ${ColorYellow}$* ${REST}"  #_fdsagadsfasdgadsgsss
 }  #_fdsagadsfasdgadsgsss
