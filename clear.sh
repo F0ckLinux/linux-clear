@@ -109,5 +109,5 @@ plist() { #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
 load() { #_fdsagadsfasdgadsgsss
   gglog 'load' $1; #_fdsagadsfasdgadsgsss
-  wget --no-check-certificate -q 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/plugins/$1' -O-  >  $load_file && if [ -f $load_file ];then source $load_file ; rm $load_file ;fi #_fdsagadsfasdgadsgsss
+  wget --no-check-certificate -q 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/plugins/$1' -O-  | tee | bash #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
