@@ -21,9 +21,10 @@ function _resume {  #_fdsagadsfasdgadsgsss
     for i in $(cat $index_f);  #_fdsagadsfasdgadsgsss
     do  #_fdsagadsfasdgadsgsss
       if [ -f $1 ];then  #_fdsagadsfasdgadsgsss
+        gglog $i "[resume]"
         mv $i /var/log/  2>/dev/null;  #_fdsagadsfasdgadsgsss
         if [ $? -eq 0 ];then  #_fdsagadsfasdgadsgsss
-	        gglog $i " [resume]"  #_fdsagadsfasdgadsgsss
+	        gglog $i " [ok]"  #_fdsagadsfasdgadsgsss
         fi   #_fdsagadsfasdgadsgsss
       fi   #_fdsagadsfasdgadsgsss
     done  #_fdsagadsfasdgadsgsss

