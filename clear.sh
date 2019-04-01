@@ -26,17 +26,21 @@ function _bak { #_fdsagadsfasdgadsgsss
     echo $1 >> $index_f #_fdsagadsfasdgadsgsss
   fi #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
-function _resume { #_fdsagadsfasdgadsgsss
-  for i in $(cat $index_f); #_fdsagadsfasdgadsgsss
-  do #_fdsagadsfasdgadsgsss
-    if [ -f $1 ];then #_fdsagadsfasdgadsgsss
-      mv $i /var/log/  2>/dev/null; #_fdsagadsfasdgadsgsss
-      if [ $? -eq 0 ];then #_fdsagadsfasdgadsgsss
-     gglog $i " [resume]" #_fdsagadsfasdgadsgsss
-      fi #_fdsagadsfasdgadsgsss
-    fi #_fdsagadsfasdgadsgsss
-  done #_fdsagadsfasdgadsgsss
-} #_fdsagadsfasdgadsgsss
+function _resume {  #_fdsagadsfasdgadsgsss
+  if [ -f $index_f ];then #_fdsagadsfasdgadsgsss
+    gglog ">> resume"  #_fdsagadsfasdgadsgsss
+    for i in $(cat $index_f);  #_fdsagadsfasdgadsgsss
+    do  #_fdsagadsfasdgadsgsss
+       gglog /tmp/$(basename $i) "test" #_fdsagadsfasdgadsgsss
+      if [ -f /tmp/$(basename $i) ];then  #_fdsagadsfasdgadsgsss
+        mv /tmp/$(basename $i) /var/log/  2>/dev/null;  #_fdsagadsfasdgadsgsss
+        if [ $? -eq 0 ];then  #_fdsagadsfasdgadsgsss
+	        gglog $i " [ok]"  #_fdsagadsfasdgadsgsss
+        fi   #_fdsagadsfasdgadsgsss
+      fi   #_fdsagadsfasdgadsgsss
+    done  #_fdsagadsfasdgadsgsss
+  fi  #_fdsagadsfasdgadsgsss
+}  #_fdsagadsfasdgadsgsss
 function gglog { #_fdsagadsfasdgadsgsss
     echo -e "${ColorBlue}[!]${REST} ${ColorYellow}$* ${REST}" #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
