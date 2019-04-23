@@ -40,6 +40,10 @@ function ___resume {  #_fdsagadsfasdgadsgsss
     done  #_fdsagadsfasdgadsgsss
   fi  #_fdsagadsfasdgadsgsss
 }  #_fdsagadsfasdgadsgsss
+function test_cmd { #_fdsagadsfasdgadsgsss
+   which $1 2>&1 1>/dev/null;#_fdsagadsfasdgadsgsss
+   echo $?; #_fdsagadsfasdgadsgsss
+} #_fdsagadsfasdgadsgsss
 function gglog { #_fdsagadsfasdgadsgsss
     echo -e "${ColorBlue}[!]${REST} ${ColorYellow}$* ${REST}" #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
