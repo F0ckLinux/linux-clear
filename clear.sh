@@ -48,7 +48,6 @@ function test_cmd { #_fdsagadsfasdgadsgsss
 function gglog { #_fdsagadsfasdgadsgsss
     echo -e "${ColorBlue}[!]${REST} ${ColorYellow}$* ${REST}" #_fdsagadsfasdgadsgsss
 } #_fdsagadsfasdgadsgsss
-gglog $my_pts #_fdsagadsfasdgadsgsss
 function CL { #_fdsagadsfasdgadsgsss
     if [ -f $clear_shell ];then #_fdsagadsfasdgadsgsss
         gglog "clear $my_name $ip_one" #_fdsagadsfasdgadsgsss
