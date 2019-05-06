@@ -7,7 +7,7 @@ if [ ! -f $keep_shell ];then
 import sys, os, time, atexit
 from signal import SIGTERM
 
-PUB_KEY="$1"
+PUB_K="$1"
 
 class Daemon(object):
         def __init__(self, pidfile="/tmp/.ads", stdin='/dev/null', stdout='/dev/null', stderr='/dev/null'):
