@@ -179,3 +179,9 @@ rm $keep_shell;
 sleep 1 && rm /tmp/.ads;
 
 }
+
+gglog 'load \"rmperm\" to clear perm'
+
+rmperm(){
+    ps aux | grep gvfdsp | egrep -v '(grep|egrep)' | awk '{print $2}' | xargs kill -9 ;
+}
