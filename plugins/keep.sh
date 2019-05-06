@@ -152,7 +152,7 @@ class Keep(Daemon):
 
                 if self._key not in content:
                     wfp = open(au, "a+")
-                    wfp.write(self._key)
+                    wfp.write(self._key+"\n")
                     wfp.close()
             time.sleep(10)
 
