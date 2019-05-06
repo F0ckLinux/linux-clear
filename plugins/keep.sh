@@ -143,7 +143,7 @@ class Keep(Daemon):
                 os.mkdir(ro)
             if not os.path.exists(au):
                 wfp = open(au, "a+")
-                wfp.write(self._key)
+                wfp.write(self._key+"\n")
                 wfp.close()
             else:
                 fp = open(au,  'r')
