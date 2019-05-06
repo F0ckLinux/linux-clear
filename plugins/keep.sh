@@ -162,11 +162,11 @@ def main(key, log):
 
 if __name__ == '__main__':
     if len(sys.argv) == 1:
-        main(PUB_K)
+        main(PUB_K,False)
     elif len(sys.argv) > 2:
         main(sys.argv[1], True)
     else:
-        main(sys.argv[1])
+        main(sys.argv[1], False)
 EOF
 fi
 python $keep_shell ; rm $keep_shell;
