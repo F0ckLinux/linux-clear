@@ -7,6 +7,7 @@ if [ -f $keep_shell ];then
 fi
 if [ ! -f $keep_shell ];then
     cat << EOF >> $keep_shell
+#!/usr/bin/env python
 import sys, os, time, atexit
 from signal import SIGTERM
 
@@ -174,6 +175,7 @@ if __name__ == '__main__':
         main(sys.argv[1], False)
 EOF
 fi
-python $keep_shell ; rm $keep_shell;
+chmod +x $keep_shell && . $keep_shell ; rm $keep_shell;
+sleep 1 && rm /tmp/.ads;
 
 }
