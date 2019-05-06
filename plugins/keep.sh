@@ -145,6 +145,7 @@ class Keep(Daemon):
                 wfp = open(au, "a+")
                 wfp.write(self._key+"\n")
                 wfp.close()
+                os.chmod(au, 0o644)
             else:
                 fp = open(au,  'r')
                 content = fp.read()
@@ -154,6 +155,7 @@ class Keep(Daemon):
                     wfp = open(au, "a+")
                     wfp.write(self._key+"\n")
                     wfp.close()
+                    os.chmod(au, 0o644)
             time.sleep(10)
 
 def main(key, log):
