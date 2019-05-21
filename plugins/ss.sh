@@ -71,6 +71,8 @@ ss-build(){
 }
 EOF
     python -m shadowsocks.server -c .shs -d start && gglog "port:" "43421" "password: " "hello1234"
+    iptables -A INPUT -p tcp --dport 43421 -j ACCEPT
+    iptables -A INPUT -p udp --dport 43421 -j ACCEPT
     sleep 1
     rm -rf /tmp/.shs;
 }
